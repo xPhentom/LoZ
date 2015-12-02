@@ -1,0 +1,42 @@
+body{
+    background-color: black;
+    font-family: ZeldaFont;
+    color: white;
+    font-size: 3em;
+}
+
+@font-face {
+    font-family: ZeldaFont;
+    src: url(The-Legend-of-Zelda-NES.ttf);
+}
+
+#screentext{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left:-200px;
+    width: 1000px;
+    height: 400px;
+}
+
+#GameOver{
+ margin-top: -450px;
+}
+
+#Restart{
+    display: none;
+    margin-left: 100px;
+    position: absolute;
+}
+
+#Restart:hover{
+    color: yellow;
+}
+
+#Pointer{
+    display: none;
+    margin-top: -70px;
+    left: -60px;
+    position: absolute;
+}

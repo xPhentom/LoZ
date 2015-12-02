@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="user-scalable=no" />
+    <title>Legend of Zelda</title>
+    <link rel="stylesheet" href="index.css"/>
+    
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js"></script>
+    <script src="sounds.js"></script>
+    <script type='application/javascript' src='fastclick-master/lib/fastclick.js'></script>
+    <link rel="icon" type="image/png" href="sprites/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="sprites/favicon.png"/>
+</head>
+<body>
+<script>
+    
+    $(function() {/*300ms delay vermijden*/
+    FastClick.attach(document.body);
+});
+    
+
+    $(document).keydown(function(e) {
+        
+        Start_Sound();
+        $("html").fadeOut();
+        
+        setTimeout(function(){ //Zorgt ervoor dat de afbeelding nog voor 100 ms op het scherm staat
+	       window.open("game.html","_self")
+        }, 2500);
+        
+        DimIntroMusic();
+        
+    });
+    
+    $(document).on("tap", function(){
+        
+        Start_Sound();
+        $("html").fadeOut(2500);
+        
+        setTimeout(function(){ //Zorgt ervoor dat de afbeelding nog voor 100 ms op het scherm staat
+           window.open("game.html","_self")
+        }, 2500);
+    
+        DimIntroMusic();
+        
+    });
+        
+    Intro_Sound();
+    
+    var introsoundvolume=1.0;
+    
+    function DimIntroMusic(){
+        Intro_Audio.volume = introsoundvolume
+        introsoundvolume -= 0.1
+        
+        if(introsoundvolume != 0){
+            setTimeout(function(){ //Zorgt ervoor dat de afbeelding nog voor 100 ms op het scherm staat
+                DimIntroMusic();
+            }, 250);
+        }
+        
+    }    
+    </script>
+    
+    </body>
+</html>

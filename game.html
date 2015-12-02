@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="user-scalable=no" />
+  <title>Legend of Zelda</title>
+  <link rel="stylesheet" href="stylesheet.css"/>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="animations.js"></script>
+    <script src="collisionattack.js"></script>
+    <script src="collisionwall.js"></script>
+    <script src="sounds.js"></script>
+    <script src="infoscherm.js"></script>
+    <script src="collisionobject.js"></script>
+    <script src="AI.js"></script>
+    <script type='application/javascript' src='fastclick-master/lib/fastclick.js'></script>
+    <link rel="shortcut icon" type="image/png" href="sprites/favicon.png"/>
+</head>
+<body onload="overworld()"><!-- onload="overworld()" -->
+<script>
+    
+    document.body.style.webkitTouchCallout='none';
+    
+    $(document).ready(function() {
+	$(document).bind("contextmenu", function(e) {
+		return false;
+	});
+});
+    
+
+$(function() {/*300ms delay vermijden*/
+    FastClick.attach(document.body);
+});
+    
+var keys = {};/*vermijden dat de scroll reageert op spaties en pijltjes*/
+window.addEventListener("keydown",
+    function (e) {
+        keys[e.keyCode] = true;
+        switch (e.keyCode) {
+            case 37: case 39: case 38:  case 40: // scroll metpijltoetsen blokkeren om spel aangenamer te maken
+            case 32: e.preventDefault(); break; // scroll met spatiebalk blokkeren om spel aangenamer te maken
+            default: break; // Alle andere toetsen niet blokken (bijvoorbeeld PageUp en PageDown)
+        }
+    },
+false);
+window.addEventListener('keyup',
+    function(e){
+        keys[e.keyCode] = false;
+    },
+false);
+        
+    
+var BestaatOctorok = [];// Houdt een array bij voor alle monsters op het veld.
+var LevenOctorok = [];
+
+$(document).ready(function(){
+    
+var octoroks = $('.Octorok').length; //Telt hoeveel Octoroks op het veld staan
+
+for(i=0; i < octoroks; i++ ){
+  BestaatOctorok.push(true);
+  LevenOctorok.push(60);
+}
+
+    AI();
+    
+});
+
+</script>
+
+<div id="scherm">
+
+	<div id="infoscherm">
+    <div id="info">
+      <div id="map"> </div>
+
+      <div id="items">
+        <img src="sprites/rupee_orange.png" id = "rupeePic"/><div id="rupeetekst">x0</div><br><!--Wordt bepaald in infoscherm.js-->
+        <img src="sprites/key_normal.png" id="keyPic"/><div id="keytekst">x0</div>
+        <img src="sprites/bomb_normal.png" id="bombPic"/><div id="bombtekst">x0</div>
+      </div>
+      
+      <div id="weaponb"><img id="weapB" src="sprites\sword_item.png" alt="Weapon B"></img> </div>
+      
+      <div id="weapona"> </div>
+
+      <div id="leven">-LIFE-</div>
+        <div id="hartencontainer">
+          <div id="harten"> </div>
+        </div>
+    </div>
+	</div>
+
+	<div id="speelscherm">
+
+	<img src="sprites/monster_1_normal_left_1.png" alt="Monster" id="Octorok0" class="Octorok"/>
+    <img src="sprites/monster_1_normal_left_1.png" alt="Monster" id="Octorok1" class="Octorok"/>
+    <img src="sprites/monster_1_normal_left_1.png" alt="Monster" id="Octorok2" class="Octorok"/>
+    <img src="sprites/monster_1_normal_left_1.png" alt="Monster" id="Octorok3" class="Octorok"/>
+
+    <img src="sprites/normal_walk_down_1.png" alt="Link" id="Link"/>
+        
+    <img src="sprites/left-pad.png" alt="Links-pad" id="Links"/> <!-- onclick="mbewegen('links')" --> 
+    <img src="sprites/down-pad.png" alt="Down-pad" id="Omlaag"/> <!-- onclick="mbewegen('omhoog')"-->
+    <img src="sprites/right-pad.png" alt="Right-pad" id="Rechts"/> <!--onclick="mbewegen('rechts')"-->
+    <img src="sprites/up-pad.png" alt="Up-pad" id="Omhoog"/> <!--onclick="mbewegen('omlaag')"-->
+    <img src="sprites/A.png" alt="A-knop" id="A" />
+    <img src="sprites/B.png" alt="B-knop" id="B" onclick="mattack()"/>
+
+
+	</div>
+</div>
+
+</body>
+</html>

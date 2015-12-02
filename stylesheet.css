@@ -1,0 +1,250 @@
+body{
+	color:white;
+    font-family: ZeldaFont;
+	font-size: 1.1em;
+	font-weight: bold;
+	background-image: url('sprites/wallpaper.jpg');
+	background-repeat: no-repeat;
+  	background-position: center center;
+  	background-attachment: fixed;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
+@font-face {
+    font-family: ZeldaFont;
+    src: url(The-Legend-of-Zelda-NES.ttf);
+}
+
+#Link{
+	position:absolute;
+	left:5px;
+	top:205px;
+}
+
+#scherm{
+	width:1024px;
+	height:768px;
+	position: relative;
+    /*left:20%;*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#speelscherm{
+    background-image: url(sprites/wallbase.png);
+	float:left;
+	height: 568px;
+	width:100%;
+	background-color: #FFFF9D;
+	border-left: 3px solid black;
+	border-bottom: 3px solid black;
+	border-right: 3px solid black;
+}
+
+/*Start infoscherm indeling*/
+#infoscherm{
+	height:200px;
+	width:100%;
+	background-color: black;
+	border-left: 3px solid black;
+	border-top: 3px solid black;
+	border-right: 3px solid black;
+}
+
+
+#info{
+	padding-top: 50px;
+	padding-left: 0px;
+	padding-right: 50px;
+}
+
+#map{
+	position: absolute;
+	margin-left:50px;
+	width: 300px;
+	height:130px;
+	background-color: gray;
+}
+
+#items{
+	float:left;
+	width:100px;
+	height: 130px;
+	margin-left: 400px;
+}
+
+#rupeePic{
+	float:left;
+	height:35px;
+}
+
+#rupeetekst{
+	color:white;
+	margin-top: 10px;
+	margin-left: 30px;
+}
+
+#keyPic{
+	float:left;
+	height:35px;
+}
+
+#keytekst{
+	color:white;
+	margin-top: 10px;
+	margin-left: 30px;
+}
+
+#bombPic{
+	height:35px;
+	float:left;
+	margin-top: 10px;
+	margin-left: -20px;
+}
+
+#bombtekst{
+	color:white;
+	margin-top: 20px;
+	margin-left: 30px;
+}
+
+#weaponb{
+	float:left;
+	width:50px;
+	height: 100px;
+	border: 3px solid #3333CC;
+	margin-left: 50px;
+	border-radius: 15px;
+}
+
+#weapona{
+	float:left;
+	width:50px;
+	height: 100px;
+	border: 3px solid #3333CC;
+	margin-left: 30px;
+	border-radius: 15px;
+}
+
+#leven{
+	color:red;
+	text-align: right;
+	margin-right:75px;
+}
+
+#hartencontainer{
+	margin-left: 750px;
+}
+
+.heartPic{
+	float:left;
+	margin-left: 5px;
+}
+
+/*Eind infoscherm*/
+
+
+#Octorok0{
+	position:absolute;
+	left: 300px;
+	top:300px;
+}
+
+#Octorok1{
+	position:absolute;
+	left: 200px;
+	top:400px;
+}
+
+#Octorok2{
+	position:absolute;
+	left: 400px;
+	top:250px;
+}
+
+#Octorok3{
+	position:absolute;
+	left: 200px;
+	top:400px;
+}
+
+#Links{
+    position: absolute;
+    bottom: 88px;
+    visibility: hidden;
+}
+
+#Omlaag{
+    position: absolute;
+    bottom: 0px;
+    left: 88px;
+    visibility: hidden;
+}
+
+#Rechts{
+    position: absolute;
+    bottom: 88px;
+    left: 176px;
+    visibility: hidden;
+}
+#Omhoog{
+    position: absolute;
+    bottom: 176px;
+    left: 88px;
+    visibility: hidden;
+}
+
+#A{
+    position: absolute;
+    bottom: 176px;
+    right: 88px;
+    visibility: hidden;
+}
+
+#B{
+    position: absolute;
+    bottom: 88px;
+    right: 176px;
+    visibility: hidden;
+}
+
+
+@media only screen and (max-device-width: 1350px) {
+    
+#Links{
+    visibility: visible;
+}
+
+#Omlaag{
+    visibility: visible;
+}
+
+#Rechts{
+      visibility: visible;
+}
+#Omhoog{
+      visibility: visible;
+}
+
+#A{
+     visibility: visible;
+}
+
+#B{
+     visibility: visible;
+}
+
+#scherm{
+    top: 0px;
+    left:0px;
+}   
+    
+#mailknop{
+    visibility: hidden;
+}
+    
+}

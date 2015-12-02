@@ -1,0 +1,76 @@
+body{
+    
+    position: fixed; 
+    overflow-y: scroll;
+    
+    height:100%;
+    width:100%;
+    font-family: ZeldaFont;
+    font-size: 1.5em;
+    background-color: white;
+	background-image: url('sprites/Link.jpg');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size: auto;
+	overflow-y: auto;
+	overflow-x:auto;
+}
+
+@font-face {
+    font-family: ZeldaFont;
+    src: url(The-Legend-of-Zelda-NES.ttf);
+}
+
+#screentext{
+    position: absolute;
+    text-align: center;
+    top: 10%
+}
+
+#blackscreen{
+    position: absolute;
+    background-color:black;
+    height:100%;
+    width:100%;
+    top:0px;
+    left:0px;
+    right:0px;
+    margin-left:-10px;
+    margin-top:-10px;
+}
+
+#blackscreentext{
+    display:none;
+    position: absolute;
+    text-align: center;
+    line-height:180%;
+    white-space: nowrap;
+    top:20%;
+}
+
+#blackscreentext2{
+    display:none;
+    position: absolute;
+    text-align: center;
+    line-height:180%;
+    white-space: nowrap;
+    top: 60%;
+}
+
+#credits{
+    top:100%;
+    padding-left:5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    position: absolute;
+    text-align: left;
+    line-height:180%;
+    background-color: black;
+    color:white;
+    border-radius: 2em;
+}
